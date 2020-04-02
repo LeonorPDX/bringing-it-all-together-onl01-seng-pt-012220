@@ -47,4 +47,12 @@ class Dog
     new_dog = self.new(name: (hash[:name]), breed: (hash[:breed]))
     new_dog.save
   end
+  
+  def self.new_from_db(row)
+    id = row[0]
+    name = row[1]
+    breed = [2]
+    
+    new_dog = self.new(name: name, breed: breed, id: id)
+  end
 end
